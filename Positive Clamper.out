@@ -1,0 +1,182 @@
+
+**** 08/03/23 12:20:36 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\Positive Clamper.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Aug 03 12:20:31 2023
+
+
+
+** Analysis setup **
+.tran 0ns 100m
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Positive Clamper.net"
+
+**** INCLUDING "Positive Clamper.net" ****
+* Schematics Netlist *
+
+
+
+R_R1         0 $N_0001  1k  
+C_C1         $N_0002 $N_0001  10000m  
+V_V2         $N_0002 0  
++PULSE -10 10 8m 0m 0m 8m 16m
+D_D1         $N_0003 $N_0001 D1N4148 
+V_V3         $N_0003 0 5v
+
+**** RESUMING "Positive Clamper.cir" ****
+.INC "Positive Clamper.als"
+
+
+
+**** INCLUDING "Positive Clamper.als" ****
+* Schematics Aliases *
+
+.ALIASES
+R_R1            R1(1=0 2=$N_0001 )
+C_C1            C1(1=$N_0002 2=$N_0001 )
+V_V2            V2(+=$N_0002 -=0 )
+D_D1            D1(1=$N_0003 2=$N_0001 )
+V_V3            V3(+=$N_0003 -=0 )
+.ENDALIASES
+
+
+**** RESUMING "Positive Clamper.cir" ****
+.probe
+
+
+.END
+
+**** 08/03/23 12:20:36 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\Positive Clamper.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4148         
+          IS    2.682000E-09 
+           N    1.836        
+         ISR    1.565000E-09 
+         IKF     .04417      
+          BV  100            
+         IBV  100.000000E-06 
+          RS     .5664       
+          TT   11.540000E-09 
+         CJO    4.000000E-12 
+          VJ     .5          
+           M     .3333       
+
+
+**** 08/03/23 12:20:36 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\Positive Clamper.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.3228                   ($N_0002)  -10.0000                       
+
+($N_0003)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         0.000E+00
+    V_V3        -4.323E-03
+
+    TOTAL POWER DISSIPATION   2.16E-02  WATTS
+
+
+**** 08/03/23 12:20:36 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\Positive Clamper.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D1      
+MODEL        D1N4148   
+ID           4.32E-03 
+VD           6.77E-01 
+REQ          1.14E+01 
+CAP          1.02E-09 
+**** 08/03/23 12:20:36 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\Positive Clamper.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.3228                   ($N_0002)  -10.0000                       
+
+($N_0003)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         0.000E+00
+    V_V3        -4.323E-03
+
+    TOTAL POWER DISSIPATION   2.16E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .08
+

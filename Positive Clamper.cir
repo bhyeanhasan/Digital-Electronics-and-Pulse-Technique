@@ -1,0 +1,23 @@
+* C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\Positive Clamper.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Aug 03 12:20:31 2023
+
+
+
+** Analysis setup **
+.tran 0ns 100m
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Positive Clamper.net"
+.INC "Positive Clamper.als"
+
+
+.probe
+
+
+.END

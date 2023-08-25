@@ -1,0 +1,182 @@
+
+**** 08/03/23 16:47:42 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\mid.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Aug 03 16:46:25 2023
+
+
+
+** Analysis setup **
+.tran 0ns 100m
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "mid.net"
+
+**** INCLUDING mid.net ****
+* Schematics Netlist *
+
+
+
+V_V3         $N_0001 0 6v
+D_D2         $N_0002 $N_0001 D1N4002 
+R_R1         0 $N_0002  200k  
+V_V2         $N_0003 0  
++PULSE 5 -15 0.0025s 0m 0m 0.0025s 0.005s
+C_C1         $N_0003 $N_0002  .05u  
+
+**** RESUMING mid.cir ****
+.INC "mid.als"
+
+
+
+**** INCLUDING mid.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V3            V3(+=$N_0001 -=0 )
+D_D2            D2(1=$N_0002 2=$N_0001 )
+R_R1            R1(1=0 2=$N_0002 )
+V_V2            V2(+=$N_0003 -=0 )
+C_C1            C1(1=$N_0003 2=$N_0002 )
+.ENDALIASES
+
+
+**** RESUMING mid.cir ****
+.probe
+
+
+.END
+
+**** 08/03/23 16:47:42 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\mid.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4002         
+          IS   14.110000E-09 
+           N    1.984        
+         ISR  100.000000E-12 
+         IKF   94.81         
+          BV  100.1          
+         IBV   10            
+          RS     .03389      
+          TT    4.761000E-06 
+         CJO   51.170000E-12 
+          VJ     .3905       
+           M     .2762       
+
+
+**** 08/03/23 16:47:42 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\mid.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    6.0000                   ($N_0002)     .0029                       
+
+($N_0003)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V3        -1.433E-08
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   8.60E-08  WATTS
+
+
+**** 08/03/23 16:47:42 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\mid.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2      
+MODEL        D1N4002   
+ID          -1.43E-08 
+VD          -6.00E+00 
+REQ          2.74E+11 
+CAP          2.36E-11 
+**** 08/03/23 16:47:42 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\NoYoN\Desktop\Digital-Electronics-and-Pulse-Technique\mid.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    6.0000                   ($N_0002)     .0029                       
+
+($N_0003)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V3        -1.433E-08
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   8.60E-08  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .09
+
